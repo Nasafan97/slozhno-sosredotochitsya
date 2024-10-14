@@ -350,7 +350,7 @@ footer {
   .content__section-block__style-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-rows: repeat(auto-fit, 1fr);
     gap: 20px;
   }
 
