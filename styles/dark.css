@@ -24,7 +24,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root .theme_dark {
+  :root {
     --background-image: url(../images/cover-image-dark.png);
     --bg-color:   #000028;
     --accent-color: #ff0070;

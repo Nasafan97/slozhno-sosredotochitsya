@@ -4,7 +4,7 @@
   переключая тему
 */
 
-:root.theme_light {
+:root .theme_light {
   --main-font: 'IBM Plex Mono', sans-serif;
   --background-image: url(../images/cover-image-light.png);
   --bg-color:   #fff1f7;
@@ -19,3 +19,4 @@
 .page.theme_light .header__decorated-element {
   display: none;
 }
+
