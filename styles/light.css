@@ -4,7 +4,7 @@
   переключая тему
 */
 
-.page.theme_light {
+:root.theme_light {
   --main-font: 'IBM Plex Mono', sans-serif;
   --background-image: url(../images/cover-image-light.png);
   --bg-color:   #fff1f7;
@@ -18,22 +18,4 @@
 
 .page.theme_light .header__decorated-element {
   display: none;
-}
-
-@media (prefers-color-scheme: light) {
-  .page.theme_light {
-    --main-font: 'IBM Plex Mono', sans-serif;
-    --background-image: url(../images/cover-image-light.png);
-    --bg-color:   #fff1f7;
-    --accent-color: #ff8dcb;
-    --main-text-color: #353430;
-    --title-color: #ffc2e6;
-    --header-text-color: #353430;
-    --decor-color: #353430;
-    --hover-color: rgba(50, 49, 45, 0.4);
-  }
-  
-  .page.theme_light .header__decorated-element {
-    display: none;
-  } 
 }
