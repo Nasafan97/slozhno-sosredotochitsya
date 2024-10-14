@@ -19,10 +19,6 @@
   display: flex;
 }
 
-.page.theme_dark .content__section-header {
-  color: var(--accent-color);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background-image: url(../images/cover-image-dark.png);
@@ -35,11 +31,7 @@
     --hover-color: rgba(255, 0, 112, 0.4);
   }
   
-  .page.theme_dark .header__decorated-element {
+  .header__decorated-element {
     display: flex;
-  }
-  
-  .page.theme_dark .content__section-header {
-    color: var(--accent-color);
   }
 }

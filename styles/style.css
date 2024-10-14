@@ -166,6 +166,7 @@ a {
 }
 
 .content__section-header {
+  color: var(--decor-color);
   margin-block-end: 20px;
   font-weight: 700;
   font-size: 18px;
