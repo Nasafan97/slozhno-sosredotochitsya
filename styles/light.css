@@ -14,6 +14,7 @@
   --header-text-color: #353430;
   --decor-color: #353430;
   --hover-color: rgba(50, 49, 45, 0.4);
+  --focus-color: #353430;
 }
 
 .page.theme_light .header__decorated-element {

@@ -1,10 +1,10 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  color: var(--main-text-color);
+  color: var(--main-text-color, #353430);
   font-family: var(--main-font, sans-serif);
-  background-color: var(--bg-color);
-  background-image: var(--background-image);
+  background-color: var(--bg-color, #fff1f7);
+  background-image: var(--background-image, url(../images/cover-image-light.png));
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -21,27 +21,26 @@
   padding: 10px;
 }
 
-
-.decorated-zone::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 25px;
-  height: 25px;
-  border-top: 1px solid var(--decor-color);
-  border-right: 1px solid var(--decor-color);
-}
-
+.decorated-zone::before,
 .decorated-zone::after {
   content: "";
   position: absolute;
-  bottom: 10px;
-  left: 10px;
   width: 25px;
   height: 25px;
-  border-bottom: 1px solid var(--decor-color);
-  border-left: 1px solid var(--decor-color);
+}
+
+.decorated-zone::before {
+  top: 10px;
+  right: 10px;
+  border-top: 1px solid var(--decor-color, #353430);
+  border-right: 1px solid var(--decor-color, #353430);
+}
+
+.decorated-zone::after {
+  bottom: 10px;
+  left: 10px;
+  border-left: 1px solid var(--decor-color, #353430);
+  border-bottom: 1px solid var(--decor-color, #353430);
 }
 
 .header__decorated-element {
@@ -53,7 +52,7 @@
   margin-inline-end: 19px;
   margin-block-start: 9px;
   padding: 1px 0;
-  color: var(--accent-color);
+  color: var(--accent-color, #ff8dcb);
   font-family: inherit;
   font-weight: 400;
   font-size: 18px;
@@ -67,8 +66,8 @@
   height: 9px;
   margin: auto;
   border-radius: 50%;
-  box-shadow: 0 0 4px 3px var(--accent-color);
-  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color, #ff8dcb);
+  background-color: var(--accent-color, #ff8dcb);
 }
 
 .header__theme-menu {
@@ -93,50 +92,53 @@
   background-color: transparent;
   cursor: pointer;
 }
-a:focus,
-button:focus {
+.a:focus,
+.button:focus {
   outline: none;
 }
 
-button:disabled {
+.button:disabled {
   pointer-events: none;
 }
 
-button:focus-visible {
-  border-block-end: 1px solid var(--decor-color);
+.button:focus-visible {
+  border-block-end: 1px solid var(--decor-color, #353430);
 }
 
-a:focus-visible {
-  outline: 1px solid var(--decor-color);
+.a:focus-visible {
+  outline: 1px solid var(--focus-color, #353430);
   outline-offset: 1px;
 }
 
-button:hover {
-  outline: 1px solid var(--hover-color);
+.button:hover {
+  outline: 1px solid var(--hover-color); /*Внимание!*/
   outline-offset: 1px;
 }
 
-a:hover {
-  border-block-end: 1px solid var(--decor-color);
+.a:hover {
+  border-block-end: 1px solid var(--decor-color, #353430);
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--decor-color);
+  outline: 1px solid var(--decor-color, #353430);
 }
 
-a {
-  text-shadow: 2px 2px 0px var(--accent-color,  #ff0070);
+.a {
+  text-shadow: 2px 2px 0px var(--accent-color,  #ff8dcb);
   cursor: pointer;
 }
 
 .header__title {
-  align-self: end;
   color: var(--title-color, #ffc2e6);
   font-family: inherit;
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.83;
-  text-shadow: 4px 4px 0px var(--accent-color,  #ff0070);
+}
+
+.title-header {
+  align-self: end;
+  text-shadow: 4px 4px 0px var(--accent-color,  #ff8dcb);
 }
 
 .header__text {
@@ -152,7 +154,7 @@ a {
   background-color: var(--accent-color, #ff8dcb);
 }
 
-.other-weight {
+.subtitle {
   font-weight: 400;
 }
 
@@ -166,7 +168,7 @@ a {
 }
 
 .content__section-header {
-  color: var(--decor-color);
+  color: var(--decor-color, #353430);
   margin-block-end: 20px;
   font-weight: 700;
   font-size: 18px;
@@ -220,13 +222,8 @@ footer {
   padding: 10px;
 }
 
-.footer__title {
-  color: var(--title-color);
-  font-family: inherit;
-  font-weight: 700;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  line-height: 0.83;
-  text-shadow: 2px 2px 0px var(--accent-color);
+.title-footer {
+  text-shadow: 2px 2px 0px var(--accent-color, #ff8dcb);
 }
 
 @media (width >= 768px) {
@@ -250,14 +247,15 @@ footer {
   }
 
   .header__title {
-    margin-left: -17px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    
+  }
+
+  .title-header {
+    margin-left: -17px;
   }
 
   .header__text {
     justify-self: end;
-    align-self: center;
     width: calc(100% / 2);
   }
 
@@ -269,13 +267,7 @@ footer {
   .content__section-style-column {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 20px;
-  }
-
-  .content__section-block {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    gap: 18px;
   }
 
   .content__section-header-width {
@@ -309,8 +301,8 @@ footer {
 
   .content__section-block-picture {
     display: grid;
-    grid-template-columns: repeat(3, minmax(230px));
-    grid-template-rows: repeat(3, minmax(230px));
+    grid-template-columns: repeat(3, minmax(230px,max-content));
+    grid-template-rows: repeat(3, minmax(230px, max-content));
     grid-template-areas: 
     "sunset sunset ice-cream"
     "tape books ice-cream"
@@ -322,10 +314,6 @@ footer {
   footer {
     min-height: 1024px;
     padding: 20px;
-  }
-
-  .footer__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
 
@@ -340,9 +328,11 @@ footer {
   }
   
   .header__theme-menu-list {
-    display: flex;
     flex-direction: row;
-    gap: 10px;
+  }
+
+  .content__section-style-column {
+    gap: 12px;
   }
 
   .content__section-block__style-row {
