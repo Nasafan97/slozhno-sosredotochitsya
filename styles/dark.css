@@ -30,6 +30,7 @@
     --header-text-color: #000028;
     --decor-color: #ff0070;
     --hover-color: rgba(255, 0, 112, 0.4);
+    --focus-color: #f1b2ce;
   }
   
   .header__decorated-element {
